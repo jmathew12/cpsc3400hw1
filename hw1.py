@@ -6,31 +6,38 @@ import sys
 
 def countPairs(fileName):
     pairsOfLetters = {}
-    print(pairsOfLetters)
+    # print(pairsOfLetters)
     with open(fileName, 'r') as inputFile:
-        # print(inputFile.readline()) 
         for line in inputFile:
-            print(line, end = "")
-            # print(len(line))
+            # print(line, end = "")
             for x in range(0, (len(line)-2)):
-                if pairsOfLetters.get(line[x : x+2]) == None:
-                    pairsOfLetters[line[x : x+2]] = 1
-                # print(pairsOfLetters[line[x : x+2]])
-                # if pairsOfLetters[line[x : x+2]] > 0:
-                #     pairsOfLetters[line[x : x+2]] = pairsOfLetters[line[x : x
-                    # +2]] + 1
-                else:
-                    pairsOfLetters[line[x : x+2]] = pairsOfLetters[line[x : 
-                            x+2]] + 1
-    print(pairsOfLetters)            
+                tempString = line[x : x+2]
+                
+                if tempString.isalpha():
+                    print(tempString)
+                    if pairsOfLetters.get(tempString) == None:
+                        pairsOfLetters[tempString] = 1
+                    else:
+                        pairsOfLetters[tempString] = pairsOfLetters[tempString] + 1
+    # print(pairsOfLetters)
+    return pairsOfLetters
+
+
+
+def getTopFivePairs(pairsOfLetters):
+    pass
+
+def createFollowDict(pairsOfLetters):
+    pass
+           
                 
 
-print('okay')
+# print('okay')
 inputs = sys.argv
-print('here')
-print(inputs[0])
+# print('here')
+# print(inputs[0])
 countPairs(inputs[1])
-
+ 
 
 
 
