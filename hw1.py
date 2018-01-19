@@ -11,15 +11,15 @@ def countPairs(fileName):
         for line in inputFile:
             # print(line, end = "")
             for x in range(0, (len(line)-2)):
-                tempString = line[x : x+2]
+                tempString = line[x : x+2].lower()
                 
                 if tempString.isalpha():
-                    print(tempString)
+                    # print(tempString)
                     if pairsOfLetters.get(tempString) == None:
                         pairsOfLetters[tempString] = 1
                     else:
                         pairsOfLetters[tempString] = pairsOfLetters[tempString] + 1
-    # print(pairsOfLetters)
+    print(pairsOfLetters)
     return pairsOfLetters
 
 
